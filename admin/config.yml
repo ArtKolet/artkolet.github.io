@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY
+  branch: main
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+site_url: "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY"
+locale: "ru"
+collections:
+  - name: "content"
+    label: "Содержимое сайта"
+    files:
+      - name: "posts"
+        label: "Записи блога"
+        file: "content/posts.json"
+        format: "json"
+        fields:
+          - label: "Записи"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Категория", name: "category", widget: "string", default: "Заметки" }
+              - { label: "Дата", name: "date", widget: "string" }
+              - { label: "Краткое описание", name: "lead", widget: "text" }
+              - { label: "Текст записи (HTML)", name: "body", widget: "text", hint: "Можно использовать простые HTML-теги абзацев и заголовков. Не вставляйте скрипты." }
