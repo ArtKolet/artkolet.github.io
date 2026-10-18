@@ -1,2 +1,31 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Управление сайтом — Алексей Костин</title></head><body><script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script></body></html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Управление сайтом — Алексей Костин</title>
+</head>
+<body>
+  <script>
+    // Совместимость с браузерами, в которых crypto.randomUUID недоступен.
+    if (window.crypto && typeof window.crypto.randomUUID !== 'function' && typeof window.crypto.getRandomValues === 'function') {
+      try {
+        Object.defineProperty(window.crypto, 'randomUUID', {
+          configurable: true,
+          value: function () {
+            const bytes = new Uint8Array(16);
+            window.crypto.getRandomValues(bytes);
+            bytes[6] = (bytes[6] & 0x0f) | 0x40;
+            bytes[8] = (bytes[8] & 0x3f) | 0x80;
+            const hex = Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('');
+            return hex.slice(0, 8) + '-' + hex.slice(8, 12) + '-' + hex.slice(12, 16) + '-' + hex.slice(16, 20) + '-' + hex.slice(20);
+          }
+        });
+      } catch (e) {
+        console.warn('Не удалось включить совместимость crypto.randomUUID:', e);
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.16.3/dist/decap-cms.js"></script>
+</body>
+</html>
