@@ -1,0 +1,28 @@
+ПУБЛИКАЦИЯ ОБНОВЛЕНИЙ НА GITHUB PAGES
+
+В архиве находятся только изменённые/новые файлы сайта. Это сделано специально,
+чтобы не затереть ваши фотографии, обложки книг и другие исходные материалы.
+
+1. Распакуйте архив.
+2. В репозитории https://github.com/ArtKolet/artkolet.github.io замените файлы:
+   - index.html
+   - css/style.css
+   - js/main.js
+   - README.md
+3. Добавьте новую папку content/posts/ с файлами из архива (если папка уже есть,
+   добавьте/замените только перечисленные ниже файлы).
+4. Удалите старый файл content/posts.json, если он существует.
+5. НЕ удаляйте и не заменяйте существующие папки images/ и books/.
+   В разделе «Обо мне» ожидается портрет по адресу images/portrait.jpg.
+   Сохраните свой настоящий файл images/portrait.jpg в репозитории.
+6. Сделайте Commit changes. GitHub Pages опубликует изменения автоматически.
+
+Файлы записей блога:
+- content/posts/index.json
+- content/posts/iskusstvo-zamechat-obychnoye.md
+- content/posts/nachat-tozhe-chast-raboty.md
+
+Для добавления новой записи создайте .md-файл в content/posts/ и добавьте его
+имя в массив content/posts/index.json.
+
+Важно: эти файлы подготовлены, но изменения ещё не отправлены в GitHub.
