@@ -1,6 +1,6 @@
 // ОБЛОЖКИ КНИГ: укажите путь к своему изображению для каждой книги.
 const BOOK_COVER_IMAGES = {
-  'kosmicheskaya-odisseya': 'images/cover-kosmicheskaya-odisseya.jpg',
+  'cena-spaseniya': 'images/cover-cena-spaseniya.png',
   'zametki-o-zhizni': 'images/cover-zametki-o-zhizni.jpg',
   'novaya-istoriya': 'images/cover-novaya-istoriya.jpg'
 };
